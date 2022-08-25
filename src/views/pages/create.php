@@ -12,4 +12,6 @@
         <input type="email" name = 'email'>
     <br/> <br/>
     <input type="submit" value="enviar">
+    <br/><br/>
+    <a href="<?=$base;?>/">Voltar</a>
 </form>

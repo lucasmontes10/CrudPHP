@@ -2,11 +2,15 @@
 namespace src\controllers;
 
 use \core\Controller;
+use src\models\Usuario;
 
 class HomeController extends Controller {
     //Rota por padrão, chamamos de index
     public function index() {
-        $this->render('home', ['nome' => 'Lucas']);
+        $usuarios = Usuario::select()->execute();
+        $this->render('home', [
+            'usuariosVar' => $usuarios
+    ]);
     }
 
     public function sobre() {

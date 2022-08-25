@@ -22,10 +22,10 @@ class UsuarioController extends Controller {
                 ])->execute();
                 $this->redirect('/');
             }else{
-                $this->redirect('create', $nome);
+                $this->redirect('/create', $nome);
             }
         }else{
-            $this->redirect('create');
+            $this->redirect('/create');
         }
     }
 }

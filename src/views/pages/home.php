@@ -14,7 +14,7 @@
             <td><?= $usuario['id']?></td>
             <td><?= $usuario['nome']?></td>
             <td><?= $usuario['email']?></td>
-            <td> <a href="<?=$usuario['id']?>/remove">Excluir</a> <a href="">Alterar</a> </td>
+            <td> <a href="<?=$usuario['id']?>/remove">[Excluir]</a> <a href="<?=$usuario['id']?>/change">[Alterar]</a> </td>
         </tr>
     <?php endforeach; ?>
 </table>

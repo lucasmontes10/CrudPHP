@@ -33,4 +33,22 @@ class UsuarioController extends Controller {
         Usuario::delete()->where('id', $id)->execute();
         $this->redirect('/');
     }
+
+    public function modificar($args){  //vai receber argumentos
+        // $usuario = Usuario::select()->where('id', $args['id'])->execute();
+        $usuario = Usuario::select()->find($args['id']); //quando vc procura pelo id, mais rápido e menos codigo
+        //ele pega o primeiro elemento com esse id
+        $this->render('alterar', ['usuario' => $usuario]); 
+    }
+    public function modificarAction($args){
+        $nome = filter_input(INPUT_POST, 'nome');
+        $email = filter_input(INPUT_POST, 'email');
+        if($nome && $email){
+            Usuario::update()->set('nome', $nome)->set('email', $email)->
+            where('id', $args['id'])->execute();
+            $this->redirect('/');
+        }else{
+            $this->redirect('/{id}/change');
+        }
+    }
 }

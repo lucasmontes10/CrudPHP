@@ -15,3 +15,6 @@ $router->get('/create', 'UsuarioController@add');
 $router->post('/create', 'UsuarioController@addAction');
 
 $router->get('/{id}/remove', 'UsuarioController@remove');
+
+$router->get('/{id}/change', 'UsuarioController@modificar');
+$router->post('/{id}/change', 'UsuarioController@modificarAction');

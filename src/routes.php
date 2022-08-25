@@ -1,5 +1,6 @@
 <?php
 use core\Router;
+use src\controllers\UsuarioController;
 
 $router = new Router();
 
@@ -12,3 +13,5 @@ $router->get('/fotos', 'HomeController@fotos');
 
 $router->get('/create', 'UsuarioController@add');
 $router->post('/create', 'UsuarioController@addAction');
+
+$router->get('/{id}/remove', 'UsuarioController@remove');

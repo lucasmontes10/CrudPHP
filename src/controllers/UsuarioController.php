@@ -28,4 +28,9 @@ class UsuarioController extends Controller {
             $this->redirect('/create');
         }
     }
+
+    public function remove($id){
+        Usuario::delete()->where('id', $id)->execute();
+        $this->redirect('/');
+    }
 }

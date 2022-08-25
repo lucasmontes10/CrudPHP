@@ -7,12 +7,14 @@
         <td>ID</td>
         <td>Nome</td>
         <td>Email</td>
+        <td>Ações</td>
     </tr>
     <?php foreach($usuariosVar as $usuario): ?>
         <tr>
             <td><?= $usuario['id']?></td>
             <td><?= $usuario['nome']?></td>
             <td><?= $usuario['email']?></td>
+            <td> <a href="<?=$usuario['id']?>/remove">Excluir</a> <a href="">Alterar</a> </td>
         </tr>
     <?php endforeach; ?>
 </table>
